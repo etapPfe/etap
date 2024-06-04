@@ -1,0 +1,114 @@
+/* SignUpBtn Component */
+.signIn {
+    max-width: 400px; /* Set the maximum width for the form */
+    margin: 0 auto; /* Center align the form */
+    padding: 20px; /* Add padding to the form */
+    background-color: #f9f9f9; /* Background color for the form */
+    border-radius: 5px; /* Add border radius to the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+  }
+  .Pointage {
+    max-width: 750px;
+    height: 700px; /* Set the maximum width for the form */
+    margin: 0 auto; /* Center align the form */
+    padding: 20px; /* Add padding to the form */
+    background-color: hwb(0 87% 13%); /* Background color for the form */
+    border-radius: 5px; /* Add border radius to the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+  }
+  .Pointage h2 {
+    margin-bottom: 20px; /* Add margin to the heading */
+    font-size: 24px; /* Set the font size for the heading */
+    text-align: center; /* Center align the heading */* SignUpBtn Component */
+    .Pointage {
+        max-width: 400px; /* Set the maximum width for the form */
+        margin: 0 auto; /* Center align the form */
+        padding: 20px; /* Add padding to the form */
+        background-color: #f9f9f9; /* Background color for the form */
+        border-radius: 5px; /* Add border radius to the form */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+    }
+    
+    .Pointage p {
+        margin-bottom: 10px; /* Add margin to the paragraph */
+        font-size: 14px; /* Set the font size for the paragraph */
+    }
+    
+    .Pointage h2 {
+        margin-bottom: 20px; /* Add margin to the heading */
+        font-size: 24px; /* Set the font size for the heading */
+        text-align: center; /* Center align the heading */
+    }
+    
+    .Pointage label {
+        display: block; /* Display labels as block elements */
+        margin-bottom: 10px; /* Add margin to the labels */
+    }
+    
+    .Pointage input[type="text"],
+    .Pointage input[type="email"],
+    .Pointage input[type="password"],
+    .Pointage input[type="file"],
+    .Pointage button[type="submit"] {
+        width: 100%; /* Set the width of the input fields and button to 100% */
+        padding: 10px; /* Add padding to the input fields and button */
+        margin-bottom: 15px; /* Add margin to the input fields and button */
+        border: 1px solid #ddd; /* Add border to the input fields and button */
+        border-radius: 5px; /* Add border radius to the input fields and button */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    
+    .Pointage input[type="file"] {
+        margin-bottom: 20px; /* Add more margin to the file input */
+    }
+    
+    .Pointage button[type="submit"] {
+       
+        color: #fff; /* Text color for the button */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: background-color 0.3s ease; /* Add transition effect to the background color */
+    }
+    
+  
+    
+    .Pointage button {
+        background-color: transparent; /* Transparent background for the button */
+        border: none; /* Remove border from the button */
+        color: #007bff; /* Text color for the button */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: color 0.3s ease; /* Add transition effect to the text color */
+    }
+    
+  
+    
+  }
+  
+  .Pointage label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 10px; /* Add margin to the labels */
+  }
+  
+  .Pointage input[type="text"],
+  .Pointage input[type="email"],
+  .Pointage input[type="password"],
+  .Pointage input[type="file"],
+  .Pointage button[type="submit"] {
+    width: 100%; /* Set the width of the input fields and button to 100% */
+    padding: 10px; /* Add padding to the input fields and button */
+    margin-bottom: 15px; /* Add margin to the input fields and button */
+    border: 1px solid #ddd; /* Add border to the input fields and button */
+    border-radius: 5px; /* Add border radius to the input fields and button */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  
+  
+  .Pointage button[type="submit"] {
+    background-color: #007bff; /* Background color for the button */
+    color: #fff; /* Text color for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add transition effect to the background color */
+  }
+  
+  
+  
