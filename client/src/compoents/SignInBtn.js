@@ -6,62 +6,102 @@ import backgroundPhoto from '../img/bgg.jpg'; // Import your background photo
 
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
-function SignInBtn() {
-     const [anchor, setAnchor] = useState(null);
-     const navigate=useNavigate()
-     const handleClick = (event) => {
-      navigate("/SignUpBtn");
 
+function SignInBtn() {
+  const [anchorEl, setAnchorEl] = useState(null); // Corrected variable naming
+  const navigate = useNavigate();
+
+  const handleClick = (event) => {
+    navigate("/SignUpBtn");
   };
 
-  const open = Boolean(anchor);
-  const _id = open ? 'simple-popper' : undefined;
-
-  const [signIn, setSignIn] = useState({
-    Email: "",
-    Password: ""
+  const [signInData, setSignInData] = useState({
+    Email: '', // Use lowercase 'Email' for consistency
+    Password: '',
   });
 
-  const handleInput = (e) => {
-    setSignIn({
-      ...signIn,
-      [e.target.id]: e.target.value
+  const handleInput = (event) => {
+    setSignInData({
+      ...signInData,
+      [event.target.id]: event.target.value,
     });
   };
-const handleSubmit = () => {
-  axios.post("http://localhost:3000/api/auth/login", signIn)
-  .then((res) => {
-      const token = res.data.token;
-      localStorage.setItem("jwtToken", token);
-      console.log("Token Stored in the local storage", token);
-      // Redirect to login page after successful login
-      // navigate("/");
-  })
-                .catch((err) => {
-                    console.log(err);
-                });
-     
-};
 
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    try {
+      const response = await axios.post('http://localhost:3000/api/auth/login', signInData);
+      const token = response.data.token;
+      const idd = response.data.id;
+      const dataa = response.data;
+
+      localStorage.setItem('jwtToken', token);
+      localStorage.setItem('dataa', dataa);
+
+      console.log('Token Stored in Local Storage:', token);
+      console.log('dataa',dataa);
+
+      navigate('/accc'); // Assuming successful login redirects to home page
+    } catch (error) {
+      console.error('Login Error:', error);
+      // Implement error handling (e.g., display error message to user)
+    }
+  };
 
   return (
-<div>
-      
-<Header/>
-        <div className='signIn'>
-          <form onSubmit={()=>{handleSubmit()}}>
-            <h2>Sign in</h2>
-            <label htmlFor="Email">Email</label>
-            <input type="email" onChange={handleInput} value={signIn.Email} id="email" name="Email" required />
-            <label htmlFor="Password">Password</label>
-            <input type="password" onChange={handleInput} value={signIn.Password} id="password" name="Password" required />
-            <button type="submit" className='signInBtn'>Sign in</button>
-          </form>
-          <p>if you dont have a accunt <button onClick={handleClick}>Sign up</button></p>
-        </div>
-    
+    <div className="sign-in-container"> 
+      <Header />
+
+      <div className="signIn"> 
+        <form onSubmit={handleSubmit}>
+          <h2>Sign In</h2>
+          <label htmlFor="Email">Email</label> 
+          <input
+            type="Email"
+            id="Email"
+            name="Email"
+            value={signInData.Email}
+            onChange={handleInput}
+            required
+            placeholder="Enter your Email address"  
+          />
+          <label htmlFor="Password">Password</label>
+          <input
+            type="Password"
+            id="Password"
+            name="Password"
+            value={signInData.Password}
+            onChange={handleInput}
+            required
+          />
+          <button type="submit" className="sign-in-btn">
+            Sign In
+          </button>
+        </form>
+
+        <p>
+          Don't have an account?{' '}
+          <button onClick={handleClick} className="sign-up-btn">
+            Sign Up
+          </button>
+        </p>
+      </div>
     </div>
   );
 }
 
-export default SignInBtn
+export default SignInBtn;
+
+
+
+
+
+
+
+
+
+
+
+
+

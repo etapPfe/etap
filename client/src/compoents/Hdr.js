@@ -17,8 +17,8 @@ function Header() {
             <div>
                 <NavLink to="/Aprop" className="nav-button" activeClassName="active">A props</NavLink>
                 <NavLink to="/Services" className="nav-button" activeClassName="active">Service</NavLink>
-                <NavLink to="/SignUpBtn" className="nav-button" activeClassName="active">Profile</NavLink>
-                <NavLink to="/signin" className="nav-button" activeClassName="active">logout</NavLink>
+                <NavLink to="/prof" className="nav-button" activeClassName="active">Profile</NavLink>
+                <NavLink to="/" className="nav-button" activeClassName="active">logout</NavLink>
 
             </div>
         </div>
