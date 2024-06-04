@@ -1,5 +1,5 @@
 /* quiSommesNous.css */
-
+*{color: black;}
 .page {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -11,15 +11,13 @@
 
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: black;
-}
+
 
 .content {
     display: flex;
     flex-direction: column;
+    color: black;
+    
 }
 
 .actualites {

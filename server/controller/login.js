@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res) => {
     try {
-        const { UserType, Email, Password, FirstName, LastName,Address,ImageUrl} = req.body;
+        const { Type, Email, Password, Name,ImageUrl} = req.body;
         if (!Password) {
             return res.status(400).json({ error: 'Password is required' });
         }
@@ -15,14 +15,11 @@ exports.register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(Password, 10);
         const user = await db.User.create({
 
-                UserType,
-                ImageUrl:"https://img.freepik.com/premium-photo/bearded-man-illustration_665280-67047.jpg?w=826",
+            Name,
                 Email,
                 Password: hashedPassword,
-                Address,
-                FirstName,
-                LastName,
-                // ImageUrl
+                ImageUrl:"https://img.freepik.com/premium-photo/bearded-man-illustration_665280-67047.jpg?w=826",
+                Type
                
             
         });
@@ -52,8 +49,8 @@ exports.login = async (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
-        const token = jwt.sign({ userId: user.UserType,FirstName:user.FirstName  }, 'your-secret-key', { expiresIn: '1h' });
-        res.status(200).json({ token, userId: user.UserType,IdUser:user.id,name: user.FirstName });
+        const token = jwt.sign({ Id: user.id,Name:user.Name  }, 'your-secret-key', { expiresIn: '1h' });
+        res.status(200).json({ token, id: user.id,name: user.Name ,email:user.Email,type:user.Type});
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Login failed' });
