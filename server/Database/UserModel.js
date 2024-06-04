@@ -7,8 +7,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-  
-   
+  Type:{ type: DataTypes.ENUM('Directeur', 'Cadre', 'Technicien','Ouvrier','Commercial','Service client','Ingénieur','maintenance','Agent de sécurité','Stagiaire'),
+    allowNull: true
+  },
+    ImageUrl:{
+    type: DataTypes.STRING,
+    allowNull: false
+  },
     Email: {
       type: DataTypes.STRING,
       allowNull: true,
