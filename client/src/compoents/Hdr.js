@@ -15,10 +15,10 @@ function Header() {
                 <img src={logoImage} alt="Logo" className="logo-image" />
             </NavLink>
             <div>
-                <NavLink to="/Aprop" className="nav-button" activeClassName="active">A props</NavLink>
-                <NavLink to="/Services" className="nav-button" activeClassName="active">Service</NavLink>
-                <NavLink to="/prof" className="nav-button" activeClassName="active">Profile</NavLink>
+                {/* <NavLink to="/Aprop" className="nav-button" activeClassName="active">A props</NavLink>
+                <NavLink to="/Services" className="nav-button" activeClassName="active">Service</NavLink> */}
                 <NavLink to="/" className="nav-button" activeClassName="active">logout</NavLink>
+                <NavLink to="/prof" className="nav-button" activeClassName="active">Profile</NavLink>
 
             </div>
         </div>
