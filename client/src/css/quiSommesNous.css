@@ -1,0 +1,80 @@
+/* quiSommesNous.css */
+
+.page {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.actualites {
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide the overflow to create the scrolling effect */
+}
+
+.actualites h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.marquee {
+    position: relative;
+    white-space: nowrap; /* Prevent list items from wrapping */
+    overflow: hidden; /* Hide the overflow to create the scrolling effect */
+}
+
+.marquee ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Ensure the list scrolls horizontally */
+    animation: scroll 30s linear infinite; /* Adjust the duration as needed */
+}
+
+.marquee ul li {
+    display: inline-block; /* Display list items in a row */
+    background-color: #e0e0e0;
+    margin: 5px;
+    padding: 0 10px;
+    border-radius: 4px;
+    color: #333;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.quiSommesNous {
+    margin-bottom: 20px;
+}
+
+.quiSommesNous h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quiSommesNous p {
+    line-height: 1.6;
+    color: #555;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

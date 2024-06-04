@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+#log{background-color: aqua;}
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.discussion {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #444;
+  border-radius: 10px;
+}

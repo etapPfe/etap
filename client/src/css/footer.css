@@ -1,0 +1,70 @@
+/* ../css/footer.css */
+
+.zaza {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px 0;
+}
+.log{
+  width: 260PX;
+  height: 150PX;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.col p {
+  margin: 5px 0;
+  color: #343a40; /* Dark gray text */
+}
+
+.logo p {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff; /* Blue color for the logo */
+}
+
+svg {
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+.bi-linkedin,
+.bi-twitter,
+.bi-instagram {
+  width: 24px;
+  height: 24px;
+  color: #343a40;
+}
+
+.bi-google-play,
+.bi-apple {
+  width: 50px;
+  height: 40px;
+  color: #343a40;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col {
+    max-width: 100%;
+    text-align: center;
+  }
+}

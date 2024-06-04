@@ -1,0 +1,39 @@
+/* Header */
+.header {
+    height: 350px; /* Set the height of the header */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff; /* Text color for the header */
+}
+
+
+
+.header-text {
+    font-size: 24px; /* Font size for the header text */
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure buttons take full width */
+}
+
+.nav-button {
+    text-decoration: none;
+    color: #333333; /* Text color for the navigation buttons */
+    font-size: 16px; /* Font size for the navigation buttons */
+    padding: 10px 20px; /* Padding for the navigation buttons */
+    border-radius: 5px; /* Border radius for the navigation buttons */
+    transition: background-color 0.3s ease; /* Transition effect for background color */
+}
+
+
+
