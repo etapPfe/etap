@@ -7,6 +7,8 @@ import ACC from './compoents/acc';
 import Footer from './compoents/Footer';
 import Services from './compoents/Services';
 import Aprop from './compoents/Aprop';
+import AAC from './compoents/acceuil';
+import Profile from './compoents/Profile';
 
 // Declare AccPage outside of App for better readability and performance
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/signin" element={<SignInBtn />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Aprop" element={< Aprop />} />
+          <Route path="/accc" element={< AAC />} />
+          <Route path="/prof" element={< Profile />} />
 
 
         </Routes>
