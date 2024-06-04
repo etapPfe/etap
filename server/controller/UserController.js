@@ -59,7 +59,7 @@ module.exports = {
 
         updateOne: async (req, res)  => {
             const { id } = req.params;
-            const { FirstName, LastName, email, password,ImageUrl } = req.body;
+            const { Name, Email, Password,ImageUrl } = req.body;
 
             try {
                 // Find the user by ID
@@ -70,16 +70,15 @@ module.exports = {
                 }
 
                 // Update the user
-                user.FirstName = FirstName || user.FirstName;
-                user.LastName = LastName || user.LastName;
-                user.Email = email||  user.Email;
-                // user.Address = Address  ||user.Address;
+                user.Name = Name || user.Name;
+                user.Email = Email||  user.Email;
+                user.Password = Password  ||user.Password;
                 user.ImageUrl= ImageUrl|| user.ImageUrl
  
                 // Hash the password if it is being updated
-                if (password) {
+                if (Password) {
                     const salt = await bcrypt.genSalt(10);
-                    user.password = await bcrypt.hash(password, salt);
+                    user.Password = await bcrypt.hash(Password, salt);
                 }
 
                 // Save the updated user

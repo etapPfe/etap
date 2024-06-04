@@ -5,66 +5,65 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 function SignUpBtn() {
-    const navigate=useNavigate()
+    const navigate = useNavigate();
 
-    const [anchor, setAnchor] = useState(null);
     const [signUp, setSignUp] = useState({
         Name: "",
-        email: "",
-        password: ""
+        Email: "",
+        Password: "",
+        Type:"Technicien",
     });
-    const [image, setImage] = useState(null);
-    const [url, setUrl] = useState("");
-
-    const handleClick = (event) => {
-        navigate("/signin");
-
-    };
-
-    const open = Boolean(anchor);
-    const id = open ? 'simple-popper' : undefined;
 
     const handleInput = (e) => {
         setSignUp({
             ...signUp,
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         });
     };
 
-    const handleImage = (e) => {
-        setImage(e.target.files[0]);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:3000/api/auth/register", signUp);
+            console.log("User signed up:", response.data);
+            // Optionally, redirect user after successful sign-up
+            navigate("/signin");
+        } catch (error) {
+            console.log("Error during signup:", error);
+            // Display error message to the user
+        }
     };
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         await uploadImage();
-    //         const response = await axios.post("http://localhost:3000/api/user/register", {
-    //             ...signUp,
-    //             picture: url
-    //         });
-    //         console.log("User signed up:", response.data);
-    //     } catch (error) {
-    //         console.log("Error during signup:", error);
-    //     }
-    // };
 
     return (
         <div>
-            <Header/>
+            <Header />
             <div className='signIn'>
-               
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h2>Sign up</h2>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" onChange={handleInput} value={signUp.Name} id="Name" name="name" required />
+                    <label htmlFor="Name">Name</label>
+                    <input type="text" onChange={handleInput} value={signUp.Name} id="name" name="Name" required />
                     <label htmlFor="email">Email</label>
-                    <input type="email" onChange={handleInput} value={signUp.email} id="email" name="email" required />
-                    <label htmlFor="password">Password</label>
-                    <input type="password" onChange={handleInput} value={signUp.password} id="password" name="password" required />
+                    <input type="email" onChange={handleInput} value={signUp.Email} id="email" name="Email" required />
+
+                    <label htmlFor="Type">Type:</label>
+                <select id="type" name="Type" value={signUp.Type} onChange={handleInput}>
+                    <option value="Directeur">Directeur</option>
+                    <option value="Cadre">Cadre</option>
+                    <option value="Technicien">Technicien</option>
+                    <option value="Ouvrier">Ouvrier</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Service client">Service client</option>
+                    <option value="Ingénieur">Ingénieur</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="Agent de sécurité">Agent de sécurité</option>
+                    <option value="Stagiaire">Stagiaire</option>
+                </select><br /><br />
+
+                    <label htmlFor="Password">Password</label>
+                    <input type="password" onChange={handleInput} value={signUp.Password} id="password" name="Password" required />
                     <button type="submit">Sign up</button>
                 </form>
-                <p>Already have an account? <button onClick={handleClick}>Sign in</button></p>
+                <p>Already have an account? <button onClick={() => navigate("/signin")}>Sign in</button></p>
             </div>
         </div>
     );
