@@ -48,7 +48,7 @@
     .Pointage input[type="text"],
     .Pointage input[type="email"],
     .Pointage input[type="password"],
-    .Pointage input[type="file"],
+    .Pointage input[type="Name"],
     .Pointage button[type="submit"] {
         width: 100%; /* Set the width of the input fields and button to 100% */
         padding: 10px; /* Add padding to the input fields and button */

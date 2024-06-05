@@ -6,8 +6,11 @@ import Footer from './Footer';
 function Services() {
     return (
         <div>
+             <Header/>
         <div className="services">
-            <Header/>
+           
+            <br/>
+            <br/> 
             <h1>Services</h1>
             <ul>
                 <li>La base de données pétrolière</li>

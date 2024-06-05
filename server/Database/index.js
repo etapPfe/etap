@@ -22,6 +22,7 @@ async function connectionTest (){
   connectionTest()
   const db={}
   db.User=require('./UserModel')(connection,DataTypes)
+  db.Pointage=require('./PointageModel.js')(connection,DataTypes)
   
 
   
@@ -29,12 +30,12 @@ async function connectionTest (){
 
 // Sync the models with the database
 
-//  connection.sync()
-//     .then(() => {
-//         console.log('Models synced with the database.')
-//     })
-//     .catch((error) => {
-//         console.error('Unable to sync models with the database: ', error)
-//     })
+ connection.sync()
+    .then(() => {
+        console.log('Models synced with the database.')
+    })
+    .catch((error) => {
+        console.error('Unable to sync models with the database: ', error)
+    })
  
 module.exports =db 
