@@ -85,7 +85,8 @@
   
   .Pointage label {
     display: block; /* Display labels as block elements */
-    margin-bottom: 10px; /* Add margin to the labels */
+    margin-bottom: 10px;
+    /* font-size: 100; Add margin to the labels */
   }
   
   .Pointage input[type="text"],
