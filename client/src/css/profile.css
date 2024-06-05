@@ -1,63 +1,41 @@
-.updateProfile {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 400px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
+/* profile.css */
+*{
+    color: black;
+}
   
-  .updateProfile h2 {
-    margin-bottom: 20px;
+  .userInfo {
+    background-color: white;
+
+    margin: 50px auto;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
   
-  .updateProfile form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .updateProfile label {
-    font-weight: bold;
-  }
-  
-  .updateProfile input[type="text"],
-  .updateProfile input[type="email"],
-  .updateProfile input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .updateProfile input[type="file"] {
-    margin-top: 10px;
-  }
-  
-  .updateProfile button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background-color:#8A2BE2 ;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .updateProfile button:hover {
-    background-color: #6c04ce;
-  }
-  
-  .updateProfile img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100px;
-    max-height: 100px;
-    margin-bottom: 10px;
+  .userInfo img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
   }
   
+  .userInfo .userName {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .userInfo .userAddress {
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+  }
+  
+  .header, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
   

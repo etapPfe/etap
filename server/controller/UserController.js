@@ -2,14 +2,7 @@ const db = require('../Database/index'); // Assuming db exports the Sequelize co
 
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// const multer = require('multer');
-// const cloudinary = require('cloudinary').v2;
-// const upload = multer({ dest: 'uploads/' });
-// cloudinary.config({
-//     cloud_name: 'dmqumly45',
-//     api_key: '739151141682318',
-//     api_secret: 'lwkhlYbntud_BfDr3ys9jLHKiRM'
-//   });
+
 
 module.exports = {
    

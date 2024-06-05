@@ -1,7 +1,7 @@
 /* ../css/footer.css */
 
 .zaza {
-  background-color: #f8f9fa; /* Light gray background */
+  
   padding: 20px 0;
 }
 .log{
@@ -12,6 +12,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  margin-bottom: 0px;
 }
 
 .row {
