@@ -2,41 +2,20 @@ import React, { useState } from 'react';
 import '../css/aaaab.css'; // Make sure the path is correct
 import Header from './Hdr';
 import Footer from './Footer';
+import backgroundPhoto from '../img/etap-696x400.png'; // Import your background photo
 
 function LandingPage() {
   const [selectedChoice, setSelectedChoice] = useState(null);
 
   // Replace this with your actual choices
-  const choices = [
-    'Choice 1',
-    'Choice 2',
-    'Choice 3',
-    // ... add more choices as needed
-  ];
 
-  const handleChoiceClick = (choice) => {
-    setSelectedChoice(choice);
-  };
 
-  const getContent = () => {
-    switch (selectedChoice) {
-      case 'Choice 1':
-        return <h2>Content for Choice 1</h2>;
-      case 'Choice 2':
-        return <h2>Content for Choice 2</h2>;
-      case 'Choice 3':
-        return <h2>Content for Choice 3</h2>;
-      // ... Add more cases for additional choices
-      default:
-        return null;
-    }
-  };
 
   return ( <div>
   <div className='hahaha'>
       <Header/>
       <section className="actualites">
-                    <h2>Actualités</h2>
+                    {/* <h2>Actualités</h2> */}
                     <div className="marquee">
                         <ul>
                             <li>25 oct. 2023 Forage du puits Chaal-2 (CHL-2)</li>
@@ -58,6 +37,8 @@ function LandingPage() {
                             <li>20 avr. 2023 ETAP-ENA امضاء اتفاقية تعاون وشراكة</li>
                         </ul>
                     </div>
+            <div   className="header" style={{ backgroundImage: `url(${backgroundPhoto})` }}>
+            </div>
                 </section>
     <div id="landing-page">
 
@@ -71,14 +52,12 @@ function LandingPage() {
         </ul>
       </div> */}
 
-      <div id="content-container">
-        {getContent()}
-      </div>
-    </div>
-    
 
     </div>
+    
     <Footer/>
+    </div>
+ 
     </div>
   );
 }

@@ -74,7 +74,7 @@
     .Pointage button {
         background-color: transparent; /* Transparent background for the button */
         border: none; /* Remove border from the button */
-        color: #007bff; /* Text color for the button */
+        
         cursor: pointer; /* Change cursor to pointer on hover */
         transition: color 0.3s ease; /* Add transition effect to the text color */
     }

@@ -31,7 +31,7 @@ function Headerrr() {
                     {dropdownOpen && (
                         <div className="dropdown-menu">
                             <NavLink to="/Pointage" className="dropdown-item" activeClassName="active">Pointage</NavLink>
-                            <NavLink to="/Autorisation" className="dropdown-item" activeClassName="active">Autorisation</NavLink>
+                            <NavLink to="/Authorization" className="dropdown-item" activeClassName="active">Autorisation</NavLink>
                             <NavLink to="/Pret" className="dropdown-item" activeClassName="active">Pret</NavLink>
                             <NavLink to="/Congé" className="dropdown-item" activeClassName="active">Congé</NavLink>
                             <NavLink to="/Salaire" className="dropdown-item" activeClassName="active">Salaire</NavLink>

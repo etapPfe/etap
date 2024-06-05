@@ -10,6 +10,8 @@ import Aprop from './compoents/Aprop';
 import AAC from './compoents/acceuil';
 import Profile from './compoents/Profile';
 import Pointage from './compoents/pointage';
+import Pret from './compoents/Pret';
+import Authorization from './compoents/Authorization';
 
 // Declare AccPage outside of App for better readability and performance
 
@@ -27,9 +29,10 @@ function App() {
           <Route path="/accc" element={< AAC />} />
           <Route path="/prof" element={< Profile />} />
           <Route path="/Pointage" element={< Pointage />} />
-          {/* <Route path="/Autorisation" element={< Autorisatio />} /> */}
+          <Route path="/Pret" element={< Pret />} />
+          <Route path="/Authorization" element={< Authorization/>} />
 
-
+          
         </Routes>
       </BrowserRouter>
     </div>

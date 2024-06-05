@@ -5,11 +5,14 @@
     padding: 10px 20px;
     background-size: cover;
     background-position: center;
+    color: black;
 }
 
 .nnav-menu {
     display: flex;
     align-items: center;
+    color: black;
+
 }
 
 .nnav-button {
@@ -19,10 +22,14 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: black;
+
 }
 
 .nnav-button.active {
     font-weight: bold;
+    color: black;
+
 }
 
 .logo-image {
@@ -34,6 +41,8 @@ button.nav-button {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    color: black;
+
 }
 
 .dropdown {
@@ -62,6 +71,8 @@ button.nav-button {
 }
 
 .dropdown-item:hover {
+    color: black;
+
     background-color: #ddd;
 }
 

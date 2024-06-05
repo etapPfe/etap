@@ -23,8 +23,9 @@ async function connectionTest (){
   const db={}
   db.User=require('./UserModel')(connection,DataTypes)
   db.Pointage=require('./PointageModel.js')(connection,DataTypes)
+  db.Pret=require('./PretModel')(connection,DataTypes)
   
-
+  
   
 
 
