@@ -7,8 +7,7 @@ import Footer from './Footer';
 import Headerrr from './Hdr';
 
 function Authorization() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+
     const [startHour, setStartHour] = useState('');
     const [endHour, setEndHour] = useState('');
     const [reason, setReason] = useState('');
@@ -18,14 +17,13 @@ function Authorization() {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    
+    console.log(data,data,data);
     useEffect(() => {
         const token = localStorage.getItem("jwtToken");
-        
         if (token) {
             try {
                 const decoded = jwtDecode(token);
-                setId(decoded.id); // Corrected property name
+                setId(decoded.Id);
             } catch (error) {
                 console.error('Invalid token:', error);
                 setError('Invalid token');
@@ -35,12 +33,17 @@ function Authorization() {
             setLoading(false);
         }
     }, []);
-    
+
     useEffect(() => {
         if (id) {
             axios.get(`http://localhost:3000/api/user/${id}`)
                 .then(res => {
                     setData(res.data);
+                    setFormData({
+                        ...formData,
+                        id: res.data.id,
+                        Name: res.data.Name
+                    });
                     setLoading(false);
                 })
                 .catch(err => {
@@ -62,19 +65,38 @@ function Authorization() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your authorization logic here
+
+
+        axios.post('http://localhost:3000/api/autoris/add', {
+            idUser: id,
+            typeOtris: authorizationType,
+            Raison: reason,
+            HeurDD:startHour,
+             HeurDS:endHour
+          
+          
+        })
+        .then(response => {
+            console.log('Pret saved successfully:', response.data);
+            // Add logic here for success, maybe show a success message or redirect
+        })
+        .catch(error => {
+            console.error('Error saving pret:', error);
+            // Add logic here for error, maybe show an error message
+        });
     };
-    
+    // if (loading) return <div>Loading...</div>;
+    // if (error) return <div>{error}</div>;
     return (<div>
         <Headerrr/>
         <div className="Authorization">
             <form onSubmit={handleSubmit}>
                 <h2>Authorization</h2>
                 <label htmlFor="id">ID</label>
-                <input placeholder='ID...' type="text" onChange={handleInput} value={data.id} id="id" name="id" required />
+                <input placeholder='ID...' type="text" onChange={handleInput} value={id} id="id" name="id" required />
                 <br />
                 <label htmlFor="Name">Name</label>
-                <input placeholder='Name...' type="text" onChange={handleInput} value={data.name} id="name" name="name" required /> {/* Corrected ID and name */}
+                <input placeholder='Name...' type="text" onChange={handleInput} value={data.Name} id="name" name="name" required /> {/* Corrected ID and name */}
                 <br />
                 <label htmlFor="authorizationType">Authorization Type</label>
                 <select
@@ -83,9 +105,15 @@ function Authorization() {
                     onChange={(e) => setAuthorizationType(e.target.value)} // Corrected onChange handler
                     required
                 >
-                    <option value="Type 1">Type 1</option>
-                    <option value="Type 2">Type 2</option>
-                    <option value="Type 3">Type 3</option>
+                    <option value=" Déplacement professionnel "> Déplacement professionnel</option>
+                    <option value="  Heures supplementaires "> Heures supplementaires </option>
+                    <option value="Accès sécurisé">Accès sécurisé </option>
+                    <option value="Télétravail">Télétravail </option>
+                    <option value="Formation">Formation</option>
+                    <option value="Modification des  horaires">  Modification des  horaires</option>
+                    <option value="Activités spécifiques"> Activités spécifiques </option>
+                    <option value=" Publication ou  communication"> Publication ou  communication</option>
+
                 </select><br />
                 <label htmlFor="startHour">Start Hour</label>
                 <input

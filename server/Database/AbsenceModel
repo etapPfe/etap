@@ -1,0 +1,25 @@
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite:///:memory:');
+
+module.exports = (sequelize, DataTypes) => {
+  const Absence = sequelize.define('Absence', {
+    idUser: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    Name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    DATE: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    Raison: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
+  });
+
+  return Absence;
+};
