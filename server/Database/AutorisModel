@@ -1,0 +1,29 @@
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite:///:memory:');
+
+module.exports = (sequelize, DataTypes) => {
+  const Conge = sequelize.define('Conge', {
+    idUser: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    Name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    HeurDD: {
+      type: DataTypes.TIME,
+      allowNull: true
+    },
+    HeurDS: {
+      type: DataTypes.TIME,
+      allowNull: false
+    },
+    Raison: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
+  });
+
+  return Conge;
+};

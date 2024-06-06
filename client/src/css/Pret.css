@@ -1,0 +1,57 @@
+.Pret {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Pret form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .Pret form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .Pret form label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .Pret form input[type="text"],
+  .Pret form input[type="number"],
+  .Pret form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .Pret form input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .Pret form input[type="file"] + svg {
+    font-size: 20px;
+  }
+  
+  .Pret form button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .Pret form button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .Pret form button svg {
+    font-size: 20px;
+  }
+  
