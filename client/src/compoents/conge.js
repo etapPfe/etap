@@ -74,6 +74,8 @@ console.log(formData);
             Name:formData.name
         })
         .then(response => {
+            navigate("/accc");
+
             console.log('Conge saved successfully:', response.data);
             // Add logic here for success, maybe show a success message or redirect
         })

@@ -71,11 +71,7 @@ function Pointage() {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-        console.log(signUp.HeureSortie);
-        console.log(signUp.HeureEntree );
-        console.log(data.Name);
-
-        console.log(id);
+    
         if (!signUp.HeureEntree || !signUp.HeureSortie) {
             // Validate form fields
             console.error('HeureEntree and HeureSortie are required');
@@ -83,7 +79,7 @@ function Pointage() {
         }
         if (!id || !data.Name) {
             // Validate form fields
-            console.error('HeureEntree and HeureSortie are required');
+            console.error('id and Name are required');
             return;
         }
     
@@ -95,13 +91,29 @@ function Pointage() {
         })
         .then(response => {
             console.log('Pointage saved successfully:', response.data);
-            // Add logic here for success, maybe show a success message or redirect
+            // Show alert for 2 seconds
+            showAlert('Pointage saved successfully', 2000);
+            navigate("/accc");
         })
         .catch(error => {
             console.error('Error saving pointage:', error);
             // Add logic here for error, maybe show an error message
         });
     };
+    
+    // Function to show alert for a specific duration
+    function showAlert(message, duration) {
+        const alertDiv = document.createElement('div');
+        alertDiv.classList.add('alert');
+        alertDiv.textContent = message;
+        document.body.appendChild(alertDiv);
+        
+        setTimeout(() => {
+            alertDiv.remove();
+        }, duration);
+    }
+    
+    
     
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;

@@ -1,0 +1,30 @@
+/* ViewConges.css */
+
+.loading, .error {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.view-conges {
+    padding: 20px;
+}
+
+.view-conges h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.view-conges ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.view-conges li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

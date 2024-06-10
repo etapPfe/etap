@@ -85,7 +85,7 @@ function Pret() {
         e.preventDefault();
 
         if (!formData.Amount || !formData.Raison || !formData.Image1 || !formData.Image2 || !formData.ExtraField1 || !formData.ExtraField2) {
-            console.error('All fields are required');
+            console.error('All fields are ');
             return;
         }
 
@@ -98,6 +98,8 @@ function Pret() {
           
         })
         .then(response => {
+            navigate("/accc");
+
             console.log('Pret saved successfully:', response.data);
             // Add logic here for success, maybe show a success message or redirect
         })
@@ -130,21 +132,21 @@ function Pret() {
                     <br />
                     <label htmlFor="Image1">justification de revenus</label>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <input type="file" onChange={handleImageUpload} id="Image1" name="Image1" required />
+                        <input type="file" onChange={handleImageUpload} id="Image1" name="Image1"  />
                         {formData.Image1 && <FaImage style={{ cursor: 'pointer', marginLeft: 5 }} />}
                     </div>
                     <br />
                     <label htmlFor="Image2">documentation  d'identite</label>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <input type="file" onChange={handleImageUpload} id="Image2" name="Image2" required />
+                        <input type="file" onChange={handleImageUpload} id="Image2" name="Image2"  />
                         {formData.Image2 && <FaImage style={{ cursor: 'pointer', marginLeft: 5 }} />}
                     </div>
                     <br />
                     <label htmlFor="ExtraField1">garantie</label>
-                    <input type="text" onChange={handleInput} value={formData.ExtraField1} id="ExtraField1" name="ExtraField1" required />
+                    <input type="text" onChange={handleInput} value={formData.ExtraField1} id="ExtraField1" name="ExtraField1"  />
                     <br />
                     <label htmlFor="ExtraField2">accord de remboursemenet</label>
-                    <input type="text" onChange={handleInput} value={formData.ExtraField2} id="ExtraField2" name="ExtraField2" required />
+                    <input type="text" onChange={handleInput} value={formData.ExtraField2} id="ExtraField2" name="ExtraField2"  />
                     <br /><br />
                     <button style={{ color: "black" }} type="submit">
                         Demande

@@ -28,10 +28,17 @@ function SignInBtn() {
   };
 
   const handleSubmit = async (event) => {
+    if ( signInData.Email==="admin@admin" &&
+      signInData.Password==="admin"){  
+    
+        navigate('/admin'); // Assuming successful login redirects to home page
+    
+      }
     event.preventDefault(); // Prevent default form submission behavior
 
     try {
       const response = await axios.post('http://localhost:3000/api/auth/login', signInData);
+     
       const token = response.data.token;
       const idd = response.data.id;
       const dataa = response.data;
@@ -41,8 +48,8 @@ function SignInBtn() {
 
       console.log('Token Stored in Local Storage:', token);
       console.log('dataa',dataa);
-
-      navigate('/accc'); // Assuming successful login redirects to home page
+      navigate('/accc');
+      // Assuming successful login redirects to home page
     } catch (error) {
       console.error('Login Error:', error);
       // Implement error handling (e.g., display error message to user)

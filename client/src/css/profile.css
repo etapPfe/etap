@@ -1,41 +1,61 @@
 /* profile.css */
-*{
-    color: black;
-}
-  
-  .userInfo {
-    background-color: white;
 
-    margin: 50px auto;
-    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .userInfo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  .userInfo .userName {
-    font-size: 24px;
-    color: #333;
-    margin: 0 0 10px;
-  }
-  
-  .userInfo .userAddress {
-    font-size: 16px;
-    color: #777;
-    margin: 0;
-  }
-  
-  .header, .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.userInfo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.userName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.userAddress {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.updateFields {
+  margin-top: 20px;
+}
+
+.updateFields input,
+.updateFields select {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.updateFields button {
+  background-color: #28a745;
+}
+
+.updateFields button:hover {
+  background-color: #218838;
+}

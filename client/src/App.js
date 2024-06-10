@@ -14,6 +14,13 @@ import Pret from './compoents/Pret';
 import Authorization from './compoents/Authorization';
 import Conge from './compoents/conge';
 import Absence from './compoents/Absence';
+import Admin from './compoents/Admin';
+import ManageUsers from './compoents/ManageUsers';
+import ViewAbsences from './compoents/ViewAbsences';
+import ViewConges from './compoents/ViewConges';
+import Mangpret from './compoents/managepret';
+import Mangppoint from './compoents/managpoint';
+import EmployeeProfile from './compoents/Salaire';
 
 // Declare AccPage outside of App for better readability and performance
 
@@ -35,7 +42,15 @@ function App() {
           <Route path="/Authorization" element={< Authorization/>} />
           <Route path="/Congé" element={< Conge/>} />
           <Route path="/Absence" element={< Absence/>} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/manage-users" element={<ManageUsers />} />
+          <Route path="/view-absences" element={<ViewAbsences />} />
+          <Route path="/view-conges" element={<ViewConges />} />
+          <Route path="/Mangpret" element={<Mangpret />} />
+          <Route path="/Mangppoint" element={<Mangppoint />} />
+          <Route path="/Salaire" element={<EmployeeProfile />} />
 
+          
           
         </Routes>
       </BrowserRouter>

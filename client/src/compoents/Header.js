@@ -1,10 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import backgroundPhoto from '../img/bgg.jpg'; // Import your background photo
 import logoImage from '../img/logo-footer.png'; // Import your logo image
 import '../css/Header.css'; // Import CSS file
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
+
     const logOut = () => {
         localStorage.removeItem("jwtToken");
     }
