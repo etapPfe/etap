@@ -37,8 +37,7 @@ function LandingPage() {
                             <li>20 avr. 2023 ETAP-ENA امضاء اتفاقية تعاون وشراكة</li>
                         </ul>
                     </div>
-            <div   className="header" style={{ backgroundImage: `url(${backgroundPhoto})` }}>
-            </div>
+            <div   className="header" style={{ backgroundImage: `url(${backgroundPhoto})` }}> </div>
                 </section>
     <div id="landing-page">
 

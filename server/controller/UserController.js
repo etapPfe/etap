@@ -65,7 +65,7 @@ module.exports = {
                 // Update the user
                 user.Name = Name || user.Name;
                 user.Email = Email||  user.Email;
-                user.Password = Type  ||user.Type;
+                user.Type = Type  ||user.Type;
                 user.ImageUrl= ImageUrl|| user.ImageUrl
  
                 // Hash the password if it is being updated

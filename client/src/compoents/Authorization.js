@@ -39,11 +39,7 @@ function Authorization() {
             axios.get(`http://localhost:3000/api/user/${id}`)
                 .then(res => {
                     setData(res.data);
-                    setFormData({
-                        ...formData,
-                        id: res.data.id,
-                        Name: res.data.Name
-                    });
+                   
                     setLoading(false);
                 })
                 .catch(err => {
@@ -77,10 +73,15 @@ function Authorization() {
           
         })
         .then(response => {
+            navigate("/accc");
+
+            console.log(id,authorizationType,reason,startHour,endHour,'hhhhhhhhh');
             console.log('Pret saved successfully:', response.data);
             // Add logic here for success, maybe show a success message or redirect
         })
         .catch(error => {
+            console.log(id,authorizationType,reason,startHour,endHour,'hhhhhhhhh');
+
             console.error('Error saving pret:', error);
             // Add logic here for error, maybe show an error message
         });
@@ -96,7 +97,7 @@ function Authorization() {
                 <input placeholder='ID...' type="text" onChange={handleInput} value={id} id="id" name="id" required />
                 <br />
                 <label htmlFor="Name">Name</label>
-                <input placeholder='Name...' type="text" onChange={handleInput} value={data.Name} id="name" name="name" required /> {/* Corrected ID and name */}
+                <input placeholder='Name...' type="text" onChange={handleInput} value={data.Name} id="Name" name="Name" required /> {/* Corrected ID and name */}
                 <br />
                 <label htmlFor="authorizationType">Authorization Type</label>
                 <select

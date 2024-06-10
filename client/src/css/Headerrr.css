@@ -1,21 +1,19 @@
+/* Header Component */
 .nnav-buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Align items vertically */
     padding: 10px 20px;
     background-size: cover;
     background-position: center;
     color: black;
 }
 
-.nnav-menu {
-    display: flex;
-    align-items: center;
-    color: black;
-
+.logo-image {
+    height: 50px;
 }
 
-.nnav-button {
+.nav-button {
     margin: 0 10px;
     text-decoration: none;
     font-size: 16px;
@@ -23,28 +21,32 @@
     border: none;
     cursor: pointer;
     color: black;
-
 }
 
-.nnav-button.active {
+.nav-button.active {
     font-weight: bold;
-    color: black;
-
 }
 
-.logo-image {
-    height: 50px;
+/* Option Links */
+.options-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align options to the right */
 }
 
-button.nav-button {
-    background: none;
-    border: none;
-    cursor: pointer;
+.option-link {
+    margin-left: 10px;
+    text-decoration: none;
     font-size: 16px;
     color: black;
-
 }
 
+.option-link.active {
+    font-weight: bold;
+    color: black;
+}
+
+/* Dropdown Menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -72,7 +74,6 @@ button.nav-button {
 
 .dropdown-item:hover {
     color: black;
-
     background-color: #ddd;
 }
 
